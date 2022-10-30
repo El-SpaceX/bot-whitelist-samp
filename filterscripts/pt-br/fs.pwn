@@ -39,14 +39,14 @@
 //Strings
 #define STR_KICK_NOT_WHITELIST   "Seu nick nao foi encontrado em nossa whitelist, faca-o em nosso discord: "DISCORD_LINK""
 #define STR_PLAYER_IN_WHITELIST  "Seu nick foi encontrada em nossa whitelist, bom jogo."
-#define STR_EXISTS_NICK_WL       "Este nick ja esta registrado em nossa whitelist, tente outro."
+#define STR_EXISTS_NICK_WL       "Este nick ja¡ esta¡ registrado em nossa whitelist, tente outro."
 #define STR_ID_EXISTS_WL         "Encontramos o ID da sua conta do discord registrado em nosso banco de dados, voce foi setado em sua conta."
-#define STR_DCMD_INCORRECT       "Parametros incorretos, use "#PREFIX"wl [Nickname]"
+#define STR_DCMD_INCORRECT       "Para¢metros incorretos, use "#PREFIX"wl [Nickname]"
 #define STR_NICKNAME_INCORRECT   "O nickname deve conter de 3 a 24 caracteres."
-#define STR_WHITELIST_SUCESS     "Whitelist concluida com sucesso, bom jogo."
-#define STR_RWHITELIST_INCORRECT "Parametros incorretos, use "#PREFIX"rwl [Nickname]"
+#define STR_WHITELIST_SUCESS     "Whitelist conclui­da com sucesso, bom jogo."
+#define STR_RWHITELIST_INCORRECT "Paramentros incorreto, use "#PREFIX"rwl [Nickname]"
 #define STR_RWHITELIST_SUCESS    "Nick retirado da whitelist com sucesso."
-#define STR_NICK_NOT_EXISTS      "Nenhum usuario com este nick foi encontrado em whitelist de permissoes."
+#define STR_NICK_NOT_EXISTS      "Nenhum usuario com este nick foi encontrado em whitelist de permissoees."
 
 //-------------------------------- libraries --------------------------------
 
@@ -242,4 +242,3 @@ DCMD:rwl(user, channel, params[]) {
     DCC_SendChannelEmbedMessage(channel, DCC_Embed:DCC_CreateEmbed("WhiteList", STR_RWHITELIST_SUCESS, .color=2067276));
     return 1;
 }
-
