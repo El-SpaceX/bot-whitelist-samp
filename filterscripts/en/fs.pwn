@@ -53,6 +53,7 @@
 #include <a_samp>
 #include <discord-connector>
 #include <discord-cmd>
+#define SSCANF_NO_NICE_FEATURES
 #include <sscanf2>
 
 
@@ -79,14 +80,14 @@ public SetAccounOfTheID(const userid[]) {
         new query[70], playername[MAX_PLAYER_NAME+1];
         format(query, sizeof(query), "SELECT playername FROM accept WHERE userid='%q'", userid);
         DBResult = db_query(DBConnection, query);
-        db_get_field_assoc(DBResult, "playername", playername);
+        db_get_field_assoc(DBResult, "playername", playername, sizeof playername);
         DCC_SetGuildMemberNickname(guildid, user, playername);
     #endif
 
 }
 
-CreateDatabase(const directory[]=DIRECTORY_DATABASE) {
-    if((DBConnection = db_open(directory)) != DB:1){
+CreateDatabase() {
+    if((DBConnection = db_open(DIRECTORY_DATABASE)) != DB:1){
         return print("[WARNING-SQL] Whitelist database not loaded.");
     }
     else {
@@ -176,7 +177,7 @@ public OnFilterScriptExit() {
 
 public OnPlayerRequestClass(playerid, classid) {
     new playername[MAX_PLAYER_NAME+1];
-    GetPlayerName(playerid, playername);
+    GetPlayerName(playerid, playername, sizeof playername);
     if(!IsPlayerInWhitelist(playername)) {
         ShowPlayerDialog(playerid, 0, DIALOG_STYLE_MSGBOX, "Whitelist", STR_KICK_NOT_WHITELIST, "OK", #);
         SetTimerEx("KickDelay", 250, false, "i", playerid);
