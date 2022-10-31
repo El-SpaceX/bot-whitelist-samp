@@ -37,7 +37,7 @@
 
 
 //Strings
-#define STR_KICK_NOT_WHITELIST   "Seu nick nao foi encontrado em nossa whitelist, faca-o em nosso discord: "DISCORD_LINK""
+#define STR_KICK_NOT_WHITELIST   "Seu nick nao foi encontrado em nossa whitelist, faca-a em nosso discord: "DISCORD_LINK""
 #define STR_PLAYER_IN_WHITELIST  "Seu nick foi encontrada em nossa whitelist, bom jogo."
 #define STR_EXISTS_NICK_WL       "Este nick ja esta registrado em nossa whitelist, tente outro."
 #define STR_ID_EXISTS_WL         "Encontramos o ID da sua conta do discord registrado em nosso banco de dados, voce foi setado em sua conta."
